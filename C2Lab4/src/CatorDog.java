@@ -8,12 +8,25 @@
 class CatorDog {
 
 	public static void main(String args[]) {
-		
+
 		// ƒyƒbƒg
-		String pet[] = {"”L", "Œ¢", "”L", "”L", new String("”L"),
-						"”L", "Œ¢", "Œ¢", "”L", new String("Œ¢")};
-		
+		String pets[] = { "”L", "Œ¢", "”L", "”L", new String("”L"),
+				"”L", "Œ¢", "Œ¢", "”L", new String("Œ¢") };
+		int dogCount = 0;
+		int catCount = 0;
+
 		// •K—v‚È•Ï”‚¨‚æ‚Ñˆ—‚ğ‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
+		for (String pet : pets) {
+			if (pet.equals("”L")) {
+				//				System.out.println("”L");
+				catCount++;
+			} else if (pet.equals("Œ¢")) {
+				dogCount++;
+			} else {
+
+			}
+		}
+		System.out.println("”L‚ğ”‚Á‚Ä‚¢‚él‚Í" + catCount + "l‚Å‚·B");
+		System.out.println("Œ¢‚ğ”‚Á‚Ä‚¢‚él‚Í" + dogCount + "l‚Å‚·B");
 	}
 }
-
