@@ -6,7 +6,26 @@
 
 // 野菜クラス
 class Vegetable {
-	
-	// 必要なメンバ変数およびメソッドを記述してください。
+
+    static final double TAX = 0.08;
+    String name;
+    String unit;
+    int price;
+    int quantity;
+
+    public void initialize(String name,String unit,int price) {
+        this.name = name;
+        this.unit = unit;
+        this.price = price;
+    }
+
+    public void order(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getTotal() {
+        return this.price * this.quantity;
+    }
+
 }
 
