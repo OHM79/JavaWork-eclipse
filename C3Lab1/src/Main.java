@@ -4,5 +4,12 @@
  *   著作権表示      ：Copyright 2015 Fujitsu Kyushu Systems Limited
  */
 
-// Reservation クラスのインスタンスを生成し、利用するクラスを定義してください。}
-
+class Main {
+    public static void main(String[] args) {
+        Reservation res = new Reservation();
+        res.check();
+        res.reserv(4);
+        res.cancel(2);
+        res.check();
+    }
+}
