@@ -7,5 +7,9 @@
 package com.fjqs.java.labs.chap4;
 
 // GoodsInterface インタフェースを定義してください。
+public interface GoodsInterface {
+	void order(int quantity);
+	void display();
+}
 
 
