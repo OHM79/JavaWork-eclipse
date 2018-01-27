@@ -8,22 +8,24 @@ package com.fjqs.java.labs.chap4;
 
 // “X“ª”Ì”„ƒNƒ‰ƒX
 public class OverTheCounter extends Sale {
-	
+
 	private static final float DISCOUNT_RATE = 0.1f;		// ’lˆø—¦
-	
+
 	// ‰Šú‰»‚·‚é
 	public OverTheCounter(String goods, int price) {
 		super(goods, price);
 	}
-	
+
 	// î•ñ‚ğ•\¦‚·‚é
 	public void display() {
 		System.out.println("“X“ª”Ì”„‚Ì‰¿Ši");
 		super.display();
 		System.out.println("Š„ˆøŠz: " + discount);
 		System.out.println("¿‹Šz: " + billed);
+		System.out.println("==============");
+		System.out.println();
 	}
-	
+
 	// Š„ˆøŠz‚ğŒvZ‚·‚é
 	public void calcDiscount() {
 		discount = (int)(totalAmount * DISCOUNT_RATE);
