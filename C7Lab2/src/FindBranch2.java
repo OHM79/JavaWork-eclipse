@@ -23,16 +23,15 @@ public class FindBranch2 {
 		// データベースのユーザ
 		String user = "root";
 		// パスワード
-		// String pass = "password";
-		String pass = "11yatuyorosi9";
+		String pass = "password";
 
-		Connection con = null; // コネクション
-		PreparedStatement stmt1 = null; // ステートメント（支店用）
-		PreparedStatement stmt2 = null; // ステートメント（配送車用）
-		ResultSet res1 = null; // 結果セット（支店用）
-		ResultSet res2 = null; // 結果セット（配送車用）
+		Connection con = null;      // コネクション
+		PreparedStatement stmt1 = null;      // ステートメント（支店用）
+		PreparedStatement stmt2 = null;      // ステートメント（配送車用）
+		ResultSet res1 = null;      // 結果セット（支店用）
+		ResultSet res2 = null;      // 結果セット（配送車用）
 
-		String code = ""; // 支店コード
+		String code = "";            		  // 支店コード
 		if (args.length == 1) {
 			code = args[0];
 		} else {
@@ -71,10 +70,25 @@ public class FindBranch2 {
 						String vanCod = res2.getString("CODE");
 						String vanAddress = res2.getString("AREACODE");
 						String uni = res2.getString("UNDELIVERY");
-						System.out.printf("%s		%s		%s\n", vanCod, vanAddress, uni);
+						System.out.println(vanCod + "		" + vanAddress + "		" + uni);
 					}
 				} catch (Exception e) {
 					System.out.println(e);
+				} finally {
+					try {
+						if (res2 != null) {
+							res2.close();
+						}
+						if (stmt2 != null) {
+							stmt2.close();
+						}
+						if (con != null) {
+							con.close();
+						}
+					} catch (SQLException e) {
+						System.out.println("クロース処理失敗");
+						e.printStackTrace();
+					}
 				}
 			} else {
 				System.out.println("支店コード '" + code + "' に対応する情報は見つかりませんでした。");
@@ -84,6 +98,21 @@ public class FindBranch2 {
 			System.out.println(e);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if (res1 != null) {
+					res1.close();
+				}
+				if (stmt1 != null) {
+					stmt1.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("クロース処理失敗");
+				e.printStackTrace();
+			}
 		}
 	}
 }
